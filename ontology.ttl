@@ -1,0 +1,322 @@
+@prefix : <http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/> .
+
+<http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2> rdf:type owl:Ontology ;
+                                                                       rdfs:comment "Ontology representing a universtiy setting modeled in assignment 1."@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2#affiliated_with
+:affiliated_with rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Course ;
+                 rdfs:range :Division .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2#enroled_to
+:enroled_to rdf:type owl:ObjectProperty ;
+            rdfs:domain :Student ;
+            rdfs:range :Programme .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/belongs_to
+:belongs_to rdf:type owl:ObjectProperty ;
+            rdfs:domain :Programme ;
+            rdfs:range :Department .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/courseInstance_has
+:courseInstance_has rdf:type owl:ObjectProperty ;
+                    rdfs:domain :CourseInstance ;
+                    rdfs:range :HoursFor .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/directed_by
+:directed_by rdf:type owl:ObjectProperty ;
+             rdfs:domain :Programme ;
+             rdfs:range :SeniorTeacher .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/examined_by
+:examined_by rdf:type owl:ObjectProperty ;
+             rdfs:domain :CourseInstance ;
+             rdfs:range :SeniorTeacher .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/has_course
+:has_course rdf:type owl:ObjectProperty ;
+            rdfs:domain :Programme ;
+            rdfs:range :ProgrammeCourse .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/has_registered
+:has_registered rdf:type owl:ObjectProperty ;
+                rdfs:domain :CourseInstance ;
+                rdfs:range :Registration .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/in_plan_of
+:in_plan_of rdf:type owl:ObjectProperty ;
+            rdfs:domain :Course ;
+            rdfs:range :ProgrammeCourse .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/instance_of
+:instance_of rdf:type owl:ObjectProperty ;
+             rdfs:domain :CourseInstance ;
+             rdfs:range :Course .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/is
+:is rdf:type owl:ObjectProperty ;
+    rdfs:domain :Course ;
+    rdfs:range :ProgrammeCourse .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/is_registered_to
+:is_registered_to rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Student ;
+                  rdfs:range :Registration .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/owned_by
+:owned_by rdf:type owl:ObjectProperty ;
+          rdfs:domain :Course ;
+          rdfs:range :Programme .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/part_of
+:part_of rdf:type owl:ObjectProperty ;
+         rdfs:domain :Division ;
+         rdfs:range :Department .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/teacher_has
+:teacher_has rdf:type owl:ObjectProperty ;
+             rdfs:domain :Teacher ;
+             rdfs:range :HoursFor .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/works_as
+:works_as rdf:type owl:ObjectProperty ;
+          rdfs:domain :Student ;
+          rdfs:range :TeachingAssistant .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/works_for
+:works_for rdf:type owl:ObjectProperty ;
+           rdfs:domain :Teacher ;
+           rdfs:range :Division .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2#enrolmentYear
+:enrolmentYear rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Student .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/assigned
+:assigned rdf:type owl:DatatypeProperty ;
+          rdfs:domain :HoursFor ;
+          rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/assistantHours
+:assistantHours rdf:type owl:DatatypeProperty ;
+                rdfs:domain :CourseInstance .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/courseCode
+:courseCode rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Course .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/courseInstanceAcademicYear
+:courseInstanceAcademicYear rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :Course .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/courseInstanceId
+:courseInstanceId rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Course .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/courseName
+:courseName rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Course .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/courseType
+:courseType rdf:type owl:DatatypeProperty ;
+            rdfs:domain :ProgrammeCourse ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/credits
+:credits rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Course .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/departmentId
+:departmentId rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Department .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/divisionId
+:divisionId rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Division .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/grade
+:grade rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Registration ;
+       rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/graduated
+:graduated rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Student ;
+           rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/level
+:level rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Course .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/planningNumStudents
+:planningNumStudents rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :CourseInstance .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/programmeCode
+:programmeCode rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Programme .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/programmeCourseAcademicYear
+:programmeCourseAcademicYear rdf:type owl:DatatypeProperty ;
+                             rdfs:domain :ProgrammeCourse .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/programmeName
+:programmeName rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Programme .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/reported
+:reported rdf:type owl:DatatypeProperty ;
+          rdfs:domain :HoursFor ;
+          rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/seniorHours
+:seniorHours rdf:type owl:DatatypeProperty ;
+             rdfs:domain :CourseInstance .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/status
+:status rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Registration .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/studentId
+:studentId rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Student .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/studentName
+:studentName rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Student .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/studyPeriod
+:studyPeriod rdf:type owl:DatatypeProperty ;
+             rdfs:domain :CourseInstance ;
+             rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/studyYear
+:studyYear rdf:type owl:DatatypeProperty ;
+           rdfs:domain :ProgrammeCourse ;
+           rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/teacherId
+:teacherId rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Teacher .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/teacherName
+:teacherName rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Teacher .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/Course
+:Course rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/CourseInstance
+:CourseInstance rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/Department
+:Department rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/Division
+:Division rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/HoursFor
+:HoursFor rdf:type owl:Class ;
+          rdfs:comment "Intermidate class for m:n relationship between Teacher and CourseInstance (association relation)."@en .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/Programme
+:Programme rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/ProgrammeCourse
+:ProgrammeCourse rdf:type owl:Class ;
+                 rdfs:comment "Intermidate class for m:n relationship between Programme and Course (association relation)."@en .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/Registration
+:Registration rdf:type owl:Class ;
+              rdfs:comment "Intermidate class for m:n relationship between Student and CourseInstance (association relation)."@en .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/SeniorTeacher
+:SeniorTeacher rdf:type owl:Class ;
+               rdfs:subClassOf :Teacher ;
+               owl:disjointWith :TeachingAssistant .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/Student
+:Student rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/Teacher
+:Teacher rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/alialladin/ontologies/2024/3/assignment2/TeachingAssistant
+:TeachingAssistant rdf:type owl:Class ;
+                   rdfs:subClassOf :Teacher .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
